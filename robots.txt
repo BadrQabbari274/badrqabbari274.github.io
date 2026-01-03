@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://badr-qabbari274.netlify.app/sitemap.xml
+Sitemap: https://badrqabbari274.github.io/portfolio/sitemap.xml
