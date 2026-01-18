@@ -10,8 +10,8 @@ export const DATA = {
     linkedin: 'https://www.linkedin.com/in/badr-eldin-qabbari-5b541b2b9',
     github: 'https://github.com/BadrQabbari274',
     instagram: 'https://www.instagram.com/badr_qabbari274?igsh=MTJ0ODV0cDJqdHZ1Ng==',
-    twitter: 'https://twitter.com/badrqabbari',
-    facebook: 'https://www.facebook.com/badr.qabbari',
+    twitter: 'https://www.threads.com/@badr_qabbari274',
+    facebook: 'https://www.facebook.com/profile.php?id=100087166765870',
     profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/back_photo_site_bcesx1.jpg',
   },
 
