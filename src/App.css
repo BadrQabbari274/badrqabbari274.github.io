@@ -277,9 +277,11 @@ body {
 }
 
 .page-wrapper {
-  margin: 24px auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  width: 100%; /* لضمان أخذ العرض الكامل */
+  max-width: 1440px; /* اختياري: لمنع المحتوى من التمدد بشكل مبالغ فيه على الشاشات العملاقة */
+  margin: 0 auto; /* توسيط الحاوية */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 

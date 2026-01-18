@@ -40,7 +40,28 @@
   position: relative;
   z-index: 1;
 }
+/* تعديل قسم اللايت مود للزر الثانوي */
+[data-theme="light"] .hero-button-secondary {
+  background: rgba(0, 0, 0, 0.03); /* خلفية رمادية خفيفة جداً */
+  border: 1px solid rgba(0, 0, 0, 0.15); /* إطار واضح يحدد الزر */
+  color: #1f2937; /* لون النص يكون غامق */
+}
 
+[data-theme="light"] .hero-button-secondary:hover {
+  background: rgba(0, 0, 0, 0.08); /* يغمق قليلاً عند الهوفر */
+  border-color: rgba(0, 0, 0, 0.3);
+}
+/* تعديل قسم اللايت مود للزر الرئيسي */
+[data-theme="light"] .hero-button-primary {
+  background: #111827; /* لون غامق جداً */
+  color: #ffffff;      /* نص أبيض واضح */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف ليبرز عن الصفحة */
+}
+
+[data-theme="light"] .hero-button-primary:hover {
+  background: #1f2937; /* يفتح قليلاً عند الهوفر */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
 @media (min-width: 900px) { /* غيرت الـ breakpoint عشان الصورة الكبيرة تاخد راحتها */
   .about-grid {
     grid-template-columns: auto 1fr;
