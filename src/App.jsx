@@ -50,10 +50,8 @@ export default function App() {
           <Navigation />
 
           <main>
-            <div className="app-container">
               <div className="page-wrapper">
                 <Hero />
-                <div className="max-w-7xl mx-auto px-4 pb-20 space-y-16">
                   <About />
                   <Skills />
                   <Projects />
@@ -61,8 +59,6 @@ export default function App() {
                   <Certificates openGallery={openGallery} />
                   <Art openGallery={openGallery} />
                   <Contact />
-                </div>
-              </div>
             </div>
           </main>
 

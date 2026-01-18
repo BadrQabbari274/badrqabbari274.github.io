@@ -271,18 +271,36 @@ body {
 @media (max-width: 768px) {
   .ambience-orb-1,
   .ambience-orb-2 {
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
+    max-width: 100vw;
+    max-height: 100vw;
   }
 }
 
-.page-wrapper {
-  width: 100%; /* لضمان أخذ العرض الكامل */
-  max-width: 1440px; /* اختياري: لمنع المحتوى من التمدد بشكل مبالغ فيه على الشاشات العملاقة */
-  margin: 0 auto; /* توسيط الحاوية */
-  padding-left: 20px;
-  padding-right: 20px;
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
+
+/*
+* {
+  outline: 1px solid rgba(255,0,0,0.2);
+}
+
+body {
+  outline: 3px solid blue;
+}
+*/
+
+.page-wrapper {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-inline: 16px; /* موبايل friendly */
+  overflow-x: hidden;
+}
+
 
 
 /* ===== SCROLL BEHAVIOR ===== */

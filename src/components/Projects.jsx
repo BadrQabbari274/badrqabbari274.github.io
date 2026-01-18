@@ -6,6 +6,75 @@ import { useScrollAnimation } from './ScrollAnimation';
 import ProjectDetails from './ProjectDetails';
 import './Projects.css';
 
+// قمت بفصل الكارد في مكون منفصل للتحكم في حالة الصورة (لو باظت ترجع للأيكون)
+const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div
+      className={`project-card ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+      style={{ animationDelay: isVisible ? `${index * 100 + 200}ms` : '0ms' }}
+    >
+      <div className="project-image">
+        {/* اللوجيك هنا: لو فيه صورة ومحصلش ايرور اعرض الصورة.. غير كدة اعرض الايكون */}
+        {project.image && !imgError ? (
+          <img 
+            src={project.image} 
+            alt={project.title} 
+            className="project-img-cover"
+            onError={() => setImgError(true)} // لو الصورة باظت، شغل الايكون
+          />
+        ) : (
+          <div className="project-icon">💻</div>
+        )}
+      </div>
+      
+      <div className="project-content">
+        {/* تجميع العناصر العلوية مع بعض عشان ميحصلش فراغ كبير */}
+        <div className="project-info-group">
+          <div className="project-header">
+            <h3 className="project-title">{project.title}</h3>
+            <span className="project-duration">{project.duration}</span>
+          </div>
+          
+          <p className="project-description">{project.description}</p>
+          
+          <div className="project-tech">
+            {project.tech.slice(0, 4).map((tech, i) => (
+              <span key={i} className="tech-tag">{tech}</span>
+            ))}
+            {project.tech.length > 4 && (
+              <span className="tech-tag">+{project.tech.length - 4} more</span>
+            )}
+          </div>
+        </div>
+        
+        {/* الأزرار مفصولة ب margin-top: auto عشان تنزل تحت خالص */}
+        <div className="project-buttons">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              className="project-button project-button-github"
+            >
+              <Icon.Github />
+              GitHub
+            </a>
+          )}
+          <button
+            onClick={() => setSelectedProject(project)}
+            className="project-button project-button-details"
+          >
+            <Icon.Eye />
+            Details
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default function Projects() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState('all');
@@ -29,7 +98,6 @@ export default function Projects() {
         <h2 className="section-title text-gradient">{t('projects.title')}</h2>
       </div>
 
-      {/* Filter Buttons */}
       <div className={`project-filters ${isVisible ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
         {filters.map((f) => (
           <button
@@ -42,61 +110,18 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Projects Grid */}
       <div className="projects-grid">
         {filteredProjects.map((project, index) => (
-          <div
-            key={project.id}
-            className={`project-card ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-            style={{ animationDelay: isVisible ? `${index * 100 + 200}ms` : '0ms' }}
-          >
-            <div className="project-image">
-              <div className="project-icon">💻</div>
-            </div>
-            
-            <div className="project-content">
-              <div className="project-header">
-                <h3 className="project-title">{project.title}</h3>
-                <span className="project-duration">{project.duration}</span>
-              </div>
-              
-              <p className="project-description">{project.description}</p>
-              
-              <div className="project-tech">
-                {project.tech.slice(0, 4).map((tech, i) => (
-                  <span key={i} className="tech-tag">{tech}</span>
-                ))}
-                {project.tech.length > 4 && (
-                  <span className="tech-tag">+{project.tech.length - 4} more</span>
-                )}
-              </div>
-              
-              <div className="project-buttons">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="project-button project-button-github"
-                  >
-                    <Icon.Github />
-                    GitHub
-                  </a>
-                )}
-                <button
-                  onClick={() => setSelectedProject(project)}
-                  className="project-button project-button-details"
-                >
-                  <Icon.Eye />
-                  Details
-                </button>
-              </div>
-            </div>
-          </div>
+          <ProjectCard 
+            key={project.id} 
+            project={project} 
+            index={index} 
+            isVisible={isVisible}
+            setSelectedProject={setSelectedProject}
+          />
         ))}
       </div>
 
-      {/* Project Details Modal */}
       {selectedProject && (
         <ProjectDetails 
           project={selectedProject} 

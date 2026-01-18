@@ -122,16 +122,16 @@ export const DATA = {
       title: 'Full-Stack E-Commerce Platform',
       type: 'web',
       tech: ['Flutter', 'ASP.NET Web API', 'SQL Server', 'JWT Auth'],
-      duration: '2025 - Present',
+      duration: 'Present',
       description: 'An advanced e-commerce ecosystem featuring a high-performance mobile application built with Flutter and a secure RESTful API back-end. The system handles complex operations including secure user authentication (JWT), dynamic product cataloging, shopping cart logic, and real-time order processing.',
       github: 'https://github.com/BadrQabbari274',
-      images: []
+      image: []
     },
     {
       id: 'p4',
       title: "Green Pack",
       type: 'mobile',
-      duration: "2025 – 2026",
+      duration: "2025 – Present",
       description: "Smart eco-reward mobile application built with Flutter and Firebase Realtime Database. The app is connected to a physical recycling box powered by Arduino and ESP modules. When a customer inserts recyclable items, points are automatically sent to their account in real time, encouraging sustainable behavior through a digital reward system.",
       tech: [
         "Flutter",
@@ -141,7 +141,7 @@ export const DATA = {
         "IoT"
       ],
       github: 'https://github.com/BadrQabbari274',
-      images: []
+      image: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1768744245/WhatsApp_Image_2025-12-31_at_7.18.51_PM_qlpwcv.jpg']
     },
     {
       id: 'p1',
@@ -151,7 +151,7 @@ export const DATA = {
       duration: '2025',
       description: 'A comprehensive enterprise web application for educational institutions featuring student registration, attendance tracking, grade management, and role-based security access.',
       github: 'https://github.com/BadrQabbari274',
-      images: []
+      image: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1768744117/WhatsApp_Image_2026-01-18_at_2.18.08_AM_fl1zot.jpg']
     },
     {
       id: 'p2',
@@ -161,7 +161,7 @@ export const DATA = {
       duration: '2024',
       description: 'A high-performance desktop application for fitness centers, managing member subscriptions, trainer schedules, and financial reporting with a modern UI.',
       github: 'https://github.com/BadrQabbari274',
-      images: []
+      image: []
     }
   ],
 
