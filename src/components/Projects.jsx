@@ -1,20 +1,18 @@
-import React, { useState } from "react";
-import { Icon } from "./Icons";
-import { useLanguage } from "../context/LanguageContext";
-import { DATA } from "../data/portfolioData";
-import { useScrollAnimation } from "./ScrollAnimation";
-import ProjectDetails from "./ProjectDetails";
-import "./Projects.css";
+import React, { useState } from 'react';
+import { Icon } from './Icons';
+import { useLanguage } from '../context/LanguageContext';
+import { DATA } from '../data/portfolioData';
+import { useScrollAnimation } from './ScrollAnimation';
+import ProjectDetails from './ProjectDetails';
+import './Projects.css';
 
 const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
     <div
-      className={`project-card ${
-        isVisible ? "animate-fade-in-up" : "opacity-0"
-      }`}
-      style={{ animationDelay: isVisible ? `${index * 100 + 200}ms` : "0ms" }}
+      className={`project-card ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+      style={{ animationDelay: isVisible ? `${index * 100 + 200}ms` : '0ms' }}
     >
       <div className="project-image">
         {project.image && !imgError ? (
@@ -32,23 +30,16 @@ const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
       <div className="project-content">
         <div className="project-info-group">
           <div className="project-header">
-            <h3 className="project-title">
-              {t(`data.${project.title}`) || project.title}
-            </h3>
-            <span className="project-duration">
-              {t(`data.${project.duration}`) || project.duration}
-            </span>
+            <h3 className="project-title">{project.title}</h3>
+            <span className="project-duration">{project.duration}</span>
           </div>
+          
 
-          <p className="project-description">
-            {t(`data.${project.description}`) || project.description}
-          </p>
+          <p className="project-description">{project.description}</p>
 
           <div className="project-tech">
             {project.tech.slice(0, 4).map((tech, i) => (
-              <span key={i} className="tech-tag">
-                {tech}
-              </span>
+              <span key={i} className="tech-tag">{tech}</span>
             ))}
             {project.tech.length > 4 && (
               <span className="tech-tag">+{project.tech.length - 4} more</span>
@@ -83,42 +74,34 @@ const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
 
 export default function Projects() {
   const { t } = useLanguage();
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState('all');
   const [elementRef, isVisible] = useScrollAnimation();
   const [selectedProject, setSelectedProject] = useState(null);
 
   const filters = [
-    { value: "all", label: t("projects.filterAll") },
-    { value: "web", label: t("projects.filterWeb") },
-    { value: "mobile", label: t("projects.filterMobile") },
-    { value: "desktop", label: t("projects.filterDesktop") },
+    { value: 'all', label: t('projects.filterAll') },
+    { value: 'web', label: t('projects.filterWeb') },
+    { value: 'mobile', label: t('projects.filterMobile') },
+    { value: 'desktop', label: t('projects.filterDesktop') }
   ];
 
   const filteredProjects =
-    filter === "all"
+    filter === 'all'
       ? DATA.projects
-      : DATA.projects.filter((p) => p.type === filter);
+      : DATA.projects.filter(p => p.type === filter);
 
   return (
     <section id="projects" className="projects-section" ref={elementRef}>
-      <div
-        className={`section-header ${
-          isVisible ? "animate-fade-in-up" : "opacity-0"
-        }`}
-      >
-        <h2 className="section-title text-gradient">{t("projects.title")}</h2>
+      <div className={`section-header ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+        <h2 className="section-title text-gradient">{t('projects.title')}</h2>
       </div>
 
-      <div
-        className={`project-filters ${
-          isVisible ? "animate-fade-in-up delay-100" : "opacity-0"
-        }`}
-      >
+      <div className={`project-filters ${isVisible ? 'animate-fade-in-up delay-100' : 'opacity-0'}`}>
         {filters.map((f) => (
           <button
             key={f.value}
             onClick={() => setFilter(f.value)}
-            className={`filter-button ${filter === f.value ? "active" : ""}`}
+            className={`filter-button ${filter === f.value ? 'active' : ''}`}
           >
             {f.label}
           </button>
