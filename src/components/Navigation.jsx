@@ -45,8 +45,8 @@ export default function Navigation() {
     { to: '#home', label: t('nav.home') },
     { to: '#about', label: t('nav.about') },
     { to: '#skills', label: t('nav.skills') },
-    { to: '#journey', label: t('nav.journey') },
     { to: '#projects', label: t('nav.projects') },
+    { to: '#journey', label: t('nav.journey') },
     { to: '#certificates', label: t('nav.certificates') },
     { to: '#art', label: t('nav.art') },
     { to: '#contact', label: t('nav.contact') }

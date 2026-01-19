@@ -158,12 +158,10 @@ export default function Contact() {
           <div className="contact-info-wrapper">
              <div className="social-links-grid">
                 {[
-                  { href: `mailto:${DATA.header.email}`, icon: <Icon.Mail />, label: t('contact.sendEmail'), color: '#ea4335' },
-                  { href: DATA.header.whatsapp, icon: <span>💬</span>, label: 'WhatsApp', color: '#25D366' },
+                  { href: DATA.header.whatsapp, icon: <Icon.WhatsApp />, label: 'WhatsApp', color: '#25D366' },
                   { href: DATA.header.linkedin, icon: <Icon.Linkedin />, label: 'LinkedIn', color: '#0077b5' },
                   { href: DATA.header.github, icon: <Icon.Github />, label: 'GitHub', color: '#333' },
                   { href: DATA.header.twitter, icon: <Icon.Twitter />, label: 'Twitter', color: '#1da1f2' },
-                  { href: DATA.header.facebook, icon: <Icon.Facebook />, label: 'Facebook', color: '#1877f2' }
                 ].map((social, index) => (
                   <a 
                     key={index}

@@ -58,15 +58,6 @@ export default function Hero() {
               <Icon.Linkedin />
             </a>
             <a
-              href={DATA.header.instagram}
-              target="_blank"
-              rel="noreferrer"
-              className="social-link"
-              aria-label="Instagram"
-            >
-              <Icon.Instagram />
-            </a>
-            <a
               href={DATA.header.twitter}
               target="_blank"
               rel="noreferrer"
@@ -74,15 +65,6 @@ export default function Hero() {
               aria-label="Twitter"
             >
               <Icon.Twitter />
-            </a>
-            <a
-              href={DATA.header.facebook}
-              target="_blank"
-              rel="noreferrer"
-              className="social-link"
-              aria-label="Facebook"
-            >
-              <Icon.Facebook />
             </a>
           </div>
         </div>
