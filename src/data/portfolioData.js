@@ -142,7 +142,7 @@ export const DATA = {
       duration: '2024',
       description: 'A high-performance desktop application for fitness centers, managing member subscriptions, trainer schedules, and financial reporting with a modern UI.',
       github: 'https://github.com/BadrQabbari274',
-      image: []
+      image: ['https://res.cloudinary.com/dmheu8ano/image/upload/v1768855612/962392ea-532a-43bc-aa68-bd4323afc1fa.png']
     }
   ],
 
