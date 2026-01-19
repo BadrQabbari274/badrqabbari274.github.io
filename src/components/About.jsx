@@ -51,7 +51,7 @@ export default function About() {
                 <p
                   key={i}
                   className="about-paragraph"
-                  dangerouslySetInnerHTML={{ __html: para }} // التعديل هنا
+                  dangerouslySetInnerHTML={{ __html: para }}
                 />
               ))}
             </div>

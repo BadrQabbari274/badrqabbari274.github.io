@@ -1,37 +1,64 @@
-.projects-section { scroll-margin-top: 100px; }
-.project-filters { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
-.filter-button { padding: 0.5rem 1.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 9999px; color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; }
-.filter-button.active, .filter-button:hover { background: var(--accent-blue); color: white; border-color: var(--accent-blue); }
-
-.projects-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-  gap: 2rem; 
+.projects-section {
+  scroll-margin-top: 100px;
 }
 
-.project-card { 
-  background: var(--bg-secondary); 
-  border-radius: 1.5rem; 
-  overflow: hidden; 
-  border: 1px solid var(--border-color); 
-  transition: all 0.3s ease; 
-  display: flex;        
-  flex-direction: column; 
-  height: 100%;           
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.project-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-8px); box-shadow: 0 0 30px var(--shadow-glow); }
+.filter-button {
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-/* قللت ارتفاع الصورة شوية عشان البطاقة متطولش زيادة عن اللزوم */
-.project-image { 
-  height: 11rem; 
-  background: linear-gradient(135deg, #374151, #1f2937); 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  transition: transform 0.5s ease; 
+.filter-button.active,
+.filter-button:hover {
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--bg-secondary);
+  border-radius: 1.5rem;
   overflow: hidden;
-  flex-shrink: 0; /* منع الصورة من الانكماش */
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px var(--shadow-glow);
+}
+
+.project-image {
+  height: 11rem;
+  background: linear-gradient(135deg, #374151, #1f2937);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .project-img-cover {
@@ -41,78 +68,130 @@
   transition: transform 0.5s ease;
 }
 
-.project-card:hover .project-image { transform: scale(1.05); }
-.project-card:hover .project-img-cover { transform: scale(1.1); }
-.project-icon { font-size: 3rem; }
-
-.project-content { 
-  padding: 1.5rem; 
-  display: flex;       
-  flex-direction: column; 
-  flex-grow: 1; 
-  /* شلت justify-content: space-between عشان أمنع الفراغ الكبير */
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
 
-/* تجميع النصوص والتاجات مع بعض */
+.project-card:hover .project-img-cover {
+  transform: scale(1.1);
+}
+
+.project-icon {
+  font-size: 3rem;
+}
+
+.project-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .project-info-group {
   margin-bottom: 1rem;
 }
 
-.project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
-.project-title { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); transition: color 0.3s ease; }
-.project-card:hover .project-title { color: var(--accent-blue); }
-.project-duration { padding: 0.25rem 0.75rem; background: rgba(59,130,246,0.2); color: var(--accent-blue); font-size: 0.75rem; border-radius: 9999px; border: 1px solid rgba(59,130,246,0.3); white-space: nowrap; }
-
-/* تقليل الـ margin عشان نقرب المسافات */
-.project-description { color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0; /* شلت المارجن من هنا */ }
-
-.tech-tag { padding: 0.25rem 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.75rem; border-radius: 0.375rem; transition: all 0.3s ease; }
-.project-card:hover .tech-tag { border-color: rgba(59,130,246,0.3); }
-
-/* الأزرار تنزل تحت خالص */
-.project-buttons { 
-  display: flex; 
-  gap: 0.75rem; 
-  margin-top: auto; 
-  padding-top: 1.5rem; /* مسافة صغيرة تفصل بين الزراير وباقي الكلام */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
 }
 
-.project-button { 
-  flex: 1; 
-  padding: 0.75rem; 
-  border: 1px solid rgba(255,255,255,0.1); 
-  color: var(--text-primary); 
-  border-radius: 0.5rem; 
-  cursor: pointer; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  gap: 0.5rem; 
-  font-weight: 600; 
-  transition: all 0.3s ease; 
-  text-decoration: none; 
-  background: rgba(255,255,255,0.05); 
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  color: var(--accent-blue);
+}
+
+.project-duration {
+  padding: 0.25rem 0.75rem;
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent-blue);
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  white-space: nowrap;
+}
+
+.project-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+.tech-tag {
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .tech-tag {
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.project-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.project-button {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
   font-size: 0.875rem;
 }
 
-.project-button-github:hover { 
-  background: #333; 
-  border-color: #333; 
-  color: white; 
+.project-button-github:hover {
+  background: #333;
+  border-color: #333;
+  color: white;
 }
 
-.project-button-details { 
-  background: rgba(59,130,246,0.1); 
-  border-color: rgba(59,130,246,0.3); 
+.project-button-details {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
-.project-button-details:hover { 
-  background: var(--accent-blue); 
-  border-color: var(--accent-blue); 
-  color: white; 
+.project-button-details:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: white;
 }
 
-.opacity-0 { 
-  opacity: 0; 
+.opacity-0 {
+  opacity: 0;
 }

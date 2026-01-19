@@ -34,41 +34,41 @@
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem; /* زيادة المسافة لتناسب الصورة الكبيرة */
-  align-items: center; /* سنتر عمودي */
+  gap: 3rem;
+  align-items: center;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
 }
-/* تعديل قسم اللايت مود للزر الثانوي */
+
 [data-theme="light"] .hero-button-secondary {
-  background: rgba(0, 0, 0, 0.03); /* خلفية رمادية خفيفة جداً */
-  border: 1px solid rgba(0, 0, 0, 0.15); /* إطار واضح يحدد الزر */
-  color: #1f2937; /* لون النص يكون غامق */
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #1f2937;
 }
 
 [data-theme="light"] .hero-button-secondary:hover {
-  background: rgba(0, 0, 0, 0.08); /* يغمق قليلاً عند الهوفر */
+  background: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.3);
 }
-/* تعديل قسم اللايت مود للزر الرئيسي */
+
 [data-theme="light"] .hero-button-primary {
-  background: #111827; /* لون غامق جداً */
-  color: #ffffff;      /* نص أبيض واضح */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف ليبرز عن الصفحة */
+  background: #111827;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="light"] .hero-button-primary:hover {
-  background: #1f2937; /* يفتح قليلاً عند الهوفر */
+  background: #1f2937;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
-@media (min-width: 900px) { /* غيرت الـ breakpoint عشان الصورة الكبيرة تاخد راحتها */
+
+@media (min-width: 900px) {
   .about-grid {
     grid-template-columns: auto 1fr;
   }
 }
 
-/* Profile Image Wrapper */
 .about-image-wrapper {
   display: flex;
   justify-content: center;
@@ -76,19 +76,14 @@
   perspective: 1000px;
 }
 
-/* -----------------------------------
-   التعديلات الكبيرة هنا (الحجم والشكل)
-   -----------------------------------
-*/
 .about-image-container {
   position: relative;
-  width: 450px;  /* حجم كبير جداً كما طلبت */
-  height: 450px; /* مربع */
+  width: 450px;
+  height: 450px;
   transition: transform 0.5s ease;
-  border-radius: 2rem; /* حواف ناعمة للمربع بدل الدائرة */
+  border-radius: 2rem;
 }
 
-/* تأثير الوهج الخلفي - تم تحويله لمربع */
 .about-image-container::before {
   content: '';
   position: absolute;
@@ -97,7 +92,7 @@
   right: -20px;
   bottom: -20px;
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(168, 85, 247, 0.3));
-  border-radius: 2.5rem; /* نفس شكل المربع بس أكبر شوية */
+  border-radius: 2.5rem;
   filter: blur(40px);
   opacity: 0.5;
   animation: pulse 3s ease-in-out infinite;
@@ -105,16 +100,16 @@
 }
 
 .about-container:hover .about-image-container {
-  transform: rotateY(5deg) rotateX(5deg) scale(1.02); /* زدت سكيل بسيط */
+  transform: rotateY(5deg) rotateX(5deg) scale(1.02);
 }
 
 .about-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 2rem; /* مربع بحواف ناعمة */
+  border-radius: 2rem;
   border: 4px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(59, 130, 246, 0.2),
     inset 0 0 20px rgba(255, 255, 255, 0.1);
@@ -124,24 +119,23 @@
 }
 
 .about-image:hover {
-  transform: scale(1.02); /* تكبير بسيط عند الهوفر */
-  box-shadow: 
+  transform: scale(1.02);
+  box-shadow:
     0 25px 60px rgba(0, 0, 0, 0.4),
     0 0 60px rgba(59, 130, 246, 0.4),
     inset 0 0 30px rgba(255, 255, 255, 0.15);
   border-color: rgba(59, 130, 246, 0.6);
 }
 
-/* Available Badge */
 .available-badge {
   position: absolute;
-  bottom: 20px; /* تعديل المكان ليتناسب مع الحجم الكبير */
-  right: -10px; /* خروج بسيط ليعطي شكل جمالي */
+  bottom: 20px;
+  right: -10px;
   background: linear-gradient(135deg, #10b981, #34d399);
   color: white;
-  padding: 0.6rem 1.2rem; /* تكبير البادج قليلاً */
+  padding: 0.6rem 1.2rem;
   border-radius: 2rem;
-  font-size: 0.9rem; /* تكبير الخط */
+  font-size: 0.9rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -149,7 +143,7 @@
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
   animation: pulse 2s ease-in-out infinite;
   z-index: 2;
-  border: 2px solid var(--bg-secondary); /* إضافة حدود لتفصلها عن الصورة */
+  border: 2px solid var(--bg-secondary);
 }
 
 .available-dot {
@@ -165,7 +159,6 @@
   50% { opacity: 0.3; }
 }
 
-/* Text Content */
 .about-text {
   text-align: left;
 }
@@ -190,7 +183,6 @@
   border-left: 4px solid var(--accent-blue);
 }
 
-/* Action Buttons */
 .about-actions {
   display: flex;
   flex-wrap: wrap;
@@ -236,17 +228,15 @@
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
 }
 
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .about-container {
     padding: 2rem 1.5rem;
   }
 
-  /* في الموبايل والتابلت نصغرها شوية عشان متخرجش من الشاشة */
   .about-image-container {
     width: 300px;
     height: 300px;
-    margin: 0 auto; /* توسيط */
+    margin: 0 auto;
   }
 
   .available-badge {
@@ -256,29 +246,21 @@
     right: -5px;
   }
 
-/* تنسيق الكلمات المهمة */
-.about-paragraph strong {
-  /* خيار 1: لون متدرج (شيك جداً ومودرن) */
-  background: linear-gradient(120deg, #3b82f6, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: linear-gradient(120deg, #3b82f6, #a855f7);
-  
-  /* خيار 2: لو عايز لون واحد سادة (شيل الكومنت وجرب ده لو حبيت) */
-  /* color: #38bdf8; */
+  .about-paragraph strong {
+    background: linear-gradient(120deg, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
 
-  font-weight: 700;
-  position: relative;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-/* تأثير بسيط لما الماوس يجي على الكلمة المهمة */
-.about-paragraph strong:hover {
-  text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
-  transform: translateY(-1px);
-}
+  .about-paragraph strong:hover {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+    transform: translateY(-1px);
+  }
 
   .about-paragraph {
     font-size: 1rem;
@@ -295,11 +277,10 @@
   }
 }
 
-/* للموبايلات الصغيرة جداً */
 @media (max-width: 400px) {
   .about-image-container {
-    width: 100%; /* تاخد عرض الشاشة */
-    height: auto; /* الارتفاع اوتوماتيك */
-    aspect-ratio: 1/1; /* تحافظ على كونها مربع */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }

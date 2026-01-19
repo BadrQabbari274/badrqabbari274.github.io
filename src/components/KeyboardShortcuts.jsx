@@ -4,33 +4,28 @@ import "./KeyboardShortcuts.css";
 export default function KeyboardShortcuts() {
   const [showMessage, setShowMessage] = useState(false);
   const [showHint, setShowHint] = useState(true);
-  const [isMobile, setIsMobile] = useState(false); // حالة جديدة للتأكد من نوع الجهاز
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // 1. التأكد من حجم الشاشة (لو أصغر من 768px نعتبره موبايل)
     const checkDevice = () => {
       const mobileStatus = window.innerWidth <= 768;
       setIsMobile(mobileStatus);
-      if (mobileStatus) setShowHint(false); // إخفاء التلميحات فوراً لو موبايل
+      if (mobileStatus) setShowHint(false);
     };
 
-    checkDevice(); // تشغيل الفحص عند التحميل
-    window.addEventListener("resize", checkDevice); // تحديث الحالة لو المستخدم غير حجم المتصفح
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
 
     const handleKeyPress = (e) => {
-      // لو موبايل، اخرج من الفانكشن وماتعملش حاجة
       if (window.innerWidth <= 768) return;
 
-      // Ctrl + Shift + B
       if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === "B") {
         e.preventDefault();
         setShowMessage(true);
         setShowHint(false);
-        // الرسالة هتختفي بعد 5 ثواني
         setTimeout(() => setShowMessage(false), 5000);
       }
 
-      // باقي الاختصارات (G, P, C)
       if (!isTyping(e)) {
         if (e.key.toLowerCase() === "g") {
           e.preventDefault();
@@ -59,15 +54,12 @@ export default function KeyboardShortcuts() {
     };
   }, []);
 
-  // لو موبايل، مش هنعرض أي حاجة خالص (Return null)
   if (isMobile) return null;
 
   return (
     <>
-      {/* Hint Box */}
       {showHint && (
         <div className="keyboard-hint">
-          {/* ... كود التلميحات زي ما هو ... */}
           <button className="hint-close" onClick={() => setShowHint(false)}>×</button>
           <div className="hint-content">
             <div className="hint-title">⌨️ Keyboard Shortcuts</div>
@@ -81,7 +73,6 @@ export default function KeyboardShortcuts() {
         </div>
       )}
 
-      {/* Recruiter Message */}
       {showMessage && (
         <div className="recruiter-message">
           <div className="message-content">

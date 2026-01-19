@@ -6,7 +6,6 @@ import { useScrollAnimation } from './ScrollAnimation';
 import ProjectDetails from './ProjectDetails';
 import './Projects.css';
 
-// قمت بفصل الكارد في مكون منفصل للتحكم في حالة الصورة (لو باظت ترجع للأيكون)
 const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
   const [imgError, setImgError] = useState(false);
 
@@ -16,29 +15,27 @@ const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
       style={{ animationDelay: isVisible ? `${index * 100 + 200}ms` : '0ms' }}
     >
       <div className="project-image">
-        {/* اللوجيك هنا: لو فيه صورة ومحصلش ايرور اعرض الصورة.. غير كدة اعرض الايكون */}
         {project.image && !imgError ? (
-          <img 
-            src={project.image} 
-            alt={project.title} 
+          <img
+            src={project.image}
+            alt={project.title}
             className="project-img-cover"
-            onError={() => setImgError(true)} // لو الصورة باظت، شغل الايكون
+            onError={() => setImgError(true)}
           />
         ) : (
           <div className="project-icon">💻</div>
         )}
       </div>
-      
+
       <div className="project-content">
-        {/* تجميع العناصر العلوية مع بعض عشان ميحصلش فراغ كبير */}
         <div className="project-info-group">
           <div className="project-header">
             <h3 className="project-title">{project.title}</h3>
             <span className="project-duration">{project.duration}</span>
           </div>
-          
+
           <p className="project-description">{project.description}</p>
-          
+
           <div className="project-tech">
             {project.tech.slice(0, 4).map((tech, i) => (
               <span key={i} className="tech-tag">{tech}</span>
@@ -48,8 +45,7 @@ const ProjectCard = ({ project, index, isVisible, setSelectedProject }) => {
             )}
           </div>
         </div>
-        
-        {/* الأزرار مفصولة ب margin-top: auto عشان تنزل تحت خالص */}
+
         <div className="project-buttons">
           {project.github && (
             <a
@@ -88,9 +84,10 @@ export default function Projects() {
     { value: 'desktop', label: t('projects.filterDesktop') }
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? DATA.projects 
-    : DATA.projects.filter(p => p.type === filter);
+  const filteredProjects =
+    filter === 'all'
+      ? DATA.projects
+      : DATA.projects.filter(p => p.type === filter);
 
   return (
     <section id="projects" className="projects-section" ref={elementRef}>
@@ -112,10 +109,10 @@ export default function Projects() {
 
       <div className="projects-grid">
         {filteredProjects.map((project, index) => (
-          <ProjectCard 
-            key={project.id} 
-            project={project} 
-            index={index} 
+          <ProjectCard
+            key={project.id}
+            project={project}
+            index={index}
             isVisible={isVisible}
             setSelectedProject={setSelectedProject}
           />
@@ -123,9 +120,9 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
-        <ProjectDetails 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectDetails
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </section>
