@@ -121,7 +121,7 @@ export const DATA = {
         "ESP8266 / ESP32",
         "IoT"
       ],
-      github: 'https://github.com/BadrQabbari274',
+      github: 'https://github.com/BadrQabbari274/Green-Pack',
       image: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1768744245/WhatsApp_Image_2025-12-31_at_7.18.51_PM_qlpwcv.jpg']
     },
     {
@@ -131,7 +131,7 @@ export const DATA = {
       tech: ['MVC.NET Core', 'SQL Server', 'Entity Framework'],
       duration: '2025',
       description: 'A comprehensive enterprise web application for educational institutions featuring student registration, attendance tracking, grade management, and role-based security access.',
-      github: 'https://github.com/BadrQabbari274',
+      github: 'https://github.com/BadrQabbari274/School-Management-System',
       image: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1768744117/WhatsApp_Image_2026-01-18_at_2.18.08_AM_fl1zot.jpg']
     },
     {
@@ -141,7 +141,7 @@ export const DATA = {
       tech: ['WPF', 'Entity Framework', 'SQL Server'],
       duration: '2024',
       description: 'A high-performance desktop application for fitness centers, managing member subscriptions, trainer schedules, and financial reporting with a modern UI.',
-      github: 'https://github.com/BadrQabbari274',
+      github: 'https://github.com/BadrQabbari274/Gym-Management-System',
       image: ['https://res.cloudinary.com/dmheu8ano/image/upload/v1768855612/962392ea-532a-43bc-aa68-bd4323afc1fa.png']
     }
   ],

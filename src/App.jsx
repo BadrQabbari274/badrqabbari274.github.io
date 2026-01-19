@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,6 +15,7 @@ import ModalGallery from "./components/ModalGallery";
 import LoadingScreen from "./components/LoadingScreen";
 import ScrollToTop from "./components/ScrollToTop";
 import KeyboardShortcuts from "./components/KeyboardShortcuts";
+
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import "./App.css";
@@ -21,17 +24,41 @@ export default function App() {
   const [gallery, setGallery] = useState({ open: false, images: [] });
   const [isLoading, setIsLoading] = useState(true);
 
+  /* ================= SMOOTH SCROLL (LENIS) ================= */
   useEffect(() => {
-    // Simulate loading time
+    const lenis = new Lenis({
+      duration: 1.2,
+      smooth: true,
+      smoothTouch: false,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
+  /* ========================================================= */
+
+  /* ================= LOADING SCREEN ================= */
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
+  /* ================================================== */
 
-  const openGallery = (imgs) => setGallery({ open: true, images: imgs || [] });
-  const closeGallery = () => setGallery({ open: false, images: [] });
+  const openGallery = (imgs) =>
+    setGallery({ open: true, images: imgs || [] });
+
+  const closeGallery = () =>
+    setGallery({ open: false, images: [] });
 
   if (isLoading) {
     return <LoadingScreen />;
@@ -50,15 +77,15 @@ export default function App() {
           <Navigation />
 
           <main>
-              <div className="page-wrapper">
-                <Hero />
-                  <About />
-                  <Skills />
-                  <Projects />
-                  <Journey openGallery={openGallery} />
-                  <Certificates openGallery={openGallery} />
-                  <Art openGallery={openGallery} />
-                  <Contact />
+            <div className="page-wrapper">
+              <Hero />
+              <About />
+              <Skills />
+              <Projects />
+              <Journey openGallery={openGallery} />
+              <Certificates openGallery={openGallery} />
+              <Art openGallery={openGallery} />
+              <Contact />
             </div>
           </main>
 
@@ -67,7 +94,10 @@ export default function App() {
           <KeyboardShortcuts />
 
           {gallery.open && (
-            <ModalGallery images={gallery.images} onClose={closeGallery} />
+            <ModalGallery
+              images={gallery.images}
+              onClose={closeGallery}
+            />
           )}
         </div>
       </LanguageProvider>

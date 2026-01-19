@@ -23,7 +23,7 @@ export default function KeyboardShortcuts() {
         e.preventDefault();
         setShowMessage(true);
         setShowHint(false);
-        setTimeout(() => setShowMessage(false), 5000);
+        setTimeout(() => setShowMessage(false), 10000);
       }
 
       if (!isTyping(e)) {
