@@ -61,7 +61,7 @@ export default function Navigation() {
       <div className="nav-container">
         {/* Logo */}
         <div className="nav-logo" onClick={() => window.scrollTo(0, 0)}>
-          BADR<span className="logo-accent">.DEV</span>
+          Badr Eldin<span className="logo-accent"></span>
         </div>
 
         {/* Desktop Navigation */}

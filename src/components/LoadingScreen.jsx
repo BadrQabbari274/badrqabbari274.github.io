@@ -6,8 +6,9 @@ export default function LoadingScreen() {
     <div className="loading-screen">
       <div className="loading-content">
         <div className="loading-logo">
-          <span className="loading-text">BADR</span>
-          <span className="loading-text-accent">.DEV</span>
+          <span className="loading-text">Badr Eldin</span>
+          <br ></br>
+          <span className="loading-text-accent"></span>
         </div>
         <div className="loading-spinner">
           <div className="spinner-ring"></div>

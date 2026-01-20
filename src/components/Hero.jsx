@@ -4,6 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { DATA } from "../data/portfolioData";
 import "./Hero.css";
 
+
 export default function Hero() {
   const { t } = useLanguage();
 
@@ -71,7 +72,14 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="scroll-indicator animate-fade-in delay-500">
+      <div
+        className="scroll-indicator animate-fade-in delay-500"
+        onClick={() => {
+          document
+            .getElementById("projects")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
         <Icon.ChevronDown />
       </div>
     </header>

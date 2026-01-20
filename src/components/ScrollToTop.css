@@ -59,7 +59,7 @@
   left: 2rem;
 }
 
-[dir="rtl"] @media (max-width: 768px) {
+ @media (max-width: 768px) {
   .scroll-buttons {
     left: 1.5rem;
     right: auto;
