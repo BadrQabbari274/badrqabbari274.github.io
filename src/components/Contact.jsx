@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'; // ضفنا useRef
+import emailjs from '@emailjs/browser'; // استيراد المكتبة
 import { Icon } from './Icons';
 import { useLanguage } from '../context/LanguageContext';
 import { DATA } from '../data/portfolioData';
@@ -8,12 +9,15 @@ import './Contact.css';
 export default function Contact() {
   const { t } = useLanguage();
   const [elementRef, isVisible] = useScrollAnimation();
+  const form = useRef(); // مرجع للفورم
+
   const [formData, setFormData] = useState({ 
     name: '', 
     email: '', 
     projectType: '',
     message: '' 
   });
+  
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -23,39 +27,50 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus({ type: '', message: '' });
-
-    // Validation
-    if (!formData.name || !formData.email || !formData.projectType || !formData.message) {
-      setStatus({ type: 'error', message: 'All fields are required' });
-      return;
-    }
-
-    if (!validateEmail(formData.email)) {
-      setStatus({ type: 'error', message: 'Invalid email address' });
-      return;
-    }
-
     setIsSubmitting(true);
+    setStatus({ type: '', message: '' }); // تنظيف أي رسالة قديمة
 
     try {
-      const subject = `🚀 Project Inquiry: ${formData.projectType} from ${formData.name}`;
-      const body = `Hello Badr,%0D%0A%0D%0AYou have a new inquiry:%0D%0A%0D%0A👤 Name: ${formData.name}%0D%0A📧 Email: ${formData.email}%0D%0A💻 Project: ${formData.projectType}%0D%0A%0D%0A📝 Message:%0D%0A${formData.message}`;
-      
-      const mailtoLink = `mailto:${DATA.header.email}?subject=${encodeURIComponent(subject)}&body=${body}`;
-      
-      // نفتح الرابط في نافذة جديدة عشان نحافظ على حالة الصفحة
-      window.open(mailtoLink, '_blank');
-      
-      setStatus({ type: 'success', message: t('contact.successMessage') || 'Opening your email client...' });
-      setFormData({ name: '', email: '', projectType: '', message: '' });
+      const formDataObj = new FormData();
+      // مفتاح الـ Access Key بتاعك
+      formDataObj.append("access_key", "b30f07ef-bd1c-4fa2-9b0a-9469c08630f5");
+      formDataObj.append("name", formData.name);
+      formDataObj.append("email", formData.email);
+      formDataObj.append("project", formData.projectType);
+      formDataObj.append("message", formData.message);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataObj
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // استخدام الترجمة لرسالة النجاح
+        setStatus({ 
+          type: 'success', 
+          message: t('contact.successMessage') || 'Message sent successfully!' 
+        });
+        // تصفير الفورم
+        setFormData({ name: '', email: '', projectType: '', message: '' });
+      } else {
+        // استخدام الترجمة لرسالة الخطأ
+        setStatus({ 
+          type: 'error', 
+          message: t('contact.errorMessage') || 'Something went wrong. Please try again.' 
+        });
+      }
     } catch (error) {
-      setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
+      // في حالة وجود مشكلة في الاتصال بالسيرفر
+      setStatus({ 
+        type: 'error', 
+        message: t('contact.errorMessage') || 'Server error. Please try again later.' 
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
-
   return (
     <section id="contact" className="contact-section" ref={elementRef}>
       <div className={`contact-container ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -67,16 +82,16 @@ export default function Contact() {
         </div>
 
         <div className="contact-content">
-          {/* Contact Form */}
           <div className="contact-form-wrapper">
             <h3 className="form-title">{t('contact.formTitle')}</h3>
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form ref={form} onSubmit={handleSubmit} className="contact-form">
               <div className="form-grid">
                 <div className="form-group">
                   <label htmlFor="name" className="form-label">{t('contact.nameLabel')} <span className="required-star">*</span></label>
                   <input
                     type="text"
                     id="name"
+                    name="user_name"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -89,6 +104,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="user_email"
                     placeholder="john@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -104,6 +120,7 @@ export default function Contact() {
                 <div className="select-wrapper">
                   <select
                     id="projectType"
+                    name="project_type"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                     className="form-input form-select"
@@ -126,6 +143,7 @@ export default function Contact() {
                 <label htmlFor="message" className="form-label">{t('contact.messageLabel')} <span className="required-star">*</span></label>
                 <textarea
                   id="message"
+                  name="message"
                   rows="4"
                   placeholder="Tell me more about your project..."
                   value={formData.message}
@@ -143,7 +161,9 @@ export default function Contact() {
 
               <button type="submit" disabled={isSubmitting} className="form-submit">
                 {isSubmitting ? (
-                  <span className="loader"></span>
+                  <div className="flex items-center gap-2">
+                    <span className="loader"></span> Sending...
+                  </div>
                 ) : (
                   <>
                     <Icon.Mail />
@@ -154,7 +174,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Social Links */}
+          {/* Social Links بنفس الكود بتاعك... */}
           <div className="contact-info-wrapper">
              <div className="social-links-grid">
                 {[
