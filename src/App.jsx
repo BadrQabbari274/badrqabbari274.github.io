@@ -75,9 +75,9 @@ export default function App() {
           </div>
 
           <Navigation />
-              <Hero />
 
           <main>
+              <Hero />
             <div className="page-wrapper">
               <About />
               <Skills />

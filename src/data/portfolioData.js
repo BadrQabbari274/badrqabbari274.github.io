@@ -215,7 +215,7 @@ export const DATA = {
     { name: 'Human Resources Training', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870110/HR_h0tk69.jpg'] },
     { name: 'English International Certificate', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/a_-90/English_wckfmd.jpg'] },
     { name: 'Effective Leadership', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870114/Screenshot_2024-03-09_102254_tuespo.png'] },
-    { name: 'Business Communications', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870114/Screenshot_2024-03-09_102254_tuespo.png'] },
+    { name: 'Business Communications', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/v1766870114/Screenshot_2024-03-09_102349_f7wmft.png'] },
     { name: 'Get Started with Figma', org: 'Coursera', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870113/Get_started_with_figma_w6wmxl.png'] }
   ],
 

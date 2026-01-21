@@ -47,8 +47,6 @@ body {
 .app-container {
   min-height: 100vh;
   position: relative;
-  margin-bottom: var(--space-xl);
-  padding: var(--space-lg) 0;
 }
 
 ::selection {
@@ -312,7 +310,7 @@ html {
 
 .section {
   margin-bottom: var(--space-xl);
-  padding: var(--space-lg) 0;
+  padding: var(--space-md) 0;
 }
 
 
