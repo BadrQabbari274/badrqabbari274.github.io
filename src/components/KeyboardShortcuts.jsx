@@ -79,9 +79,10 @@ export default function KeyboardShortcuts() {
             <div className="message-icon">🎯</div>
             <h3 className="message-title">Welcome!</h3>
             <p className="message-text">
-              Hi there! Thanks for visiting my portfolio 🤩 I'm excited to share
-              my work with you 🥰 Feel free to explore, get inspired, and reach
-              out if you'd like to connect or chat about projects and ideas 😄
+              Hi there! Thanks for visiting my portfolio 🤩
+                 I'm excited to share my work with you 🥰
+                        Feel free to explore, get inspired 😉,
+              and reach out if you'd like to connect or chat about projects and ideas 😄
             </p>
             <p className="message-signature">— Badr Eldin Qabbari</p>
             <button className="message-close" onClick={() => setShowMessage(false)}>Close</button>

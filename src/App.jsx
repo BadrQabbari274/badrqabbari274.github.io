@@ -75,10 +75,10 @@ export default function App() {
           </div>
 
           <Navigation />
+              <Hero />
 
           <main>
             <div className="page-wrapper">
-              <Hero />
               <About />
               <Skills />
               <Projects />
