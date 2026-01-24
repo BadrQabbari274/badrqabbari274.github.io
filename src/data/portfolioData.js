@@ -9,7 +9,7 @@ export const DATA = {
     whatsapp: 'https://wa.me/201284940906',
     linkedin: 'https://www.linkedin.com/in/badr-eldin-qabbari-5b541b2b9',
     github: 'https://github.com/BadrQabbari274',
-    twitter: 'https://www.threads.com/@badr_qabbari274',
+    twitter: 'http://www.twitter.com/badrqabbari274',
     profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/back_photo_site_bcesx1.jpg',
   },
 
