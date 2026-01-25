@@ -10,7 +10,7 @@ export const DATA = {
     linkedin: 'https://www.linkedin.com/in/badr-eldin-qabbari-5b541b2b9',
     github: 'https://github.com/BadrQabbari274',
     twitter: 'http://www.twitter.com/badrqabbari274',
-    profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/back_photo_site_bcesx1.jpg',
+    profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/profile_image_f7i4zl.jpg',
   },
 
   activities: [{
@@ -18,12 +18,13 @@ export const DATA = {
     images: [
     ]
   }],
-
+  
   summary: [
-    "I'm Badr Eldin Qabbari — a <strong>Full-Stack Software Engineer</strong> who builds polished, <strong>production-ready applications</strong> using <strong>.NET and Flutter</strong>. I love turning ideas into fast, reliable products that people enjoy using.",
-    "I translate complex requirements into <strong>clean architectures</strong> — from <strong>APIs and databases</strong> to responsive interfaces — combining engineering rigor with practical design.",
-    "I lead <strong>community workshops</strong>, collaborate across teams, and keep learning new tools to <strong>ship meaningful software</strong> that solves real problems."
+    "Full-Stack Software Engineer with hands-on experience in delivering <strong>scalable, production-grade applications</strong> using <strong>.NET and Flutter</strong>. Focused on building reliable, high-performance solutions that translate ideas into real-world products.",
+    "Skilled in transforming complex business and technical requirements into <strong>clean, maintainable architectures</strong> — covering <strong>APIs, databases, and responsive user interfaces</strong> — with a strong balance between engineering excellence and practical design.",
+    "Actively engaged in <strong>community workshops</strong> and cross-functional collaboration, with a continuous commitment to learning and <strong>shipping impactful software</strong> that addresses real user needs."
   ],
+  
 
   skills: {
     technical: [

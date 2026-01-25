@@ -28,11 +28,10 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setStatus({ type: '', message: '' }); // تنظيف أي رسالة قديمة
+    setStatus({ type: '', message: '' }); 
 
     try {
       const formDataObj = new FormData();
-      // مفتاح الـ Access Key بتاعك
       formDataObj.append("access_key", "b30f07ef-bd1c-4fa2-9b0a-9469c08630f5");
       formDataObj.append("name", formData.name);
       formDataObj.append("email", formData.email);
@@ -47,22 +46,18 @@ export default function Contact() {
       const data = await response.json();
 
       if (data.success) {
-        // استخدام الترجمة لرسالة النجاح
         setStatus({ 
           type: 'success', 
           message: t('contact.successMessage') || 'Message sent successfully!' 
         });
-        // تصفير الفورم
         setFormData({ name: '', email: '', projectType: '', message: '' });
       } else {
-        // استخدام الترجمة لرسالة الخطأ
         setStatus({ 
           type: 'error', 
           message: t('contact.errorMessage') || 'Something went wrong. Please try again.' 
         });
       }
     } catch (error) {
-      // في حالة وجود مشكلة في الاتصال بالسيرفر
       setStatus({ 
         type: 'error', 
         message: t('contact.errorMessage') || 'Server error. Please try again later.' 
@@ -126,6 +121,7 @@ export default function Contact() {
                     className="form-input form-select"
                   >
                     <option value="" disabled>Select Project Type</option>
+                    <option value="Connect">Connect</option>
                     <option value="Desktop Application">Desktop Application</option>
                     <option value="Web Application">Web Application</option>
                     <option value="Mobile Application">Mobile Application</option>
@@ -174,7 +170,6 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Social Links بنفس الكود بتاعك... */}
           <div className="contact-info-wrapper">
              <div className="social-links-grid">
                 {[

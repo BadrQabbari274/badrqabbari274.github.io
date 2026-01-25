@@ -84,7 +84,6 @@ export default function App() {
               <Projects />
               <Journey openGallery={openGallery} />
               <Certificates openGallery={openGallery} />
-              <Art openGallery={openGallery} />
               <Contact />
             </div>
           </main>
