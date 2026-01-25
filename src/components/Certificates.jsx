@@ -23,6 +23,15 @@ export default function Certificates({ openGallery }) {
           </div>
         ))}
       </div>
+      
+      <div className={`soft-skills-banner ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+        <h3 className="soft-skills-title">{t('skills.softSkills')}</h3>
+        <div className="soft-skills-tags">
+          {DATA.skills.soft.map((skill, i) => (
+            <span key={i} className="skill-tag">{skill}</span>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
