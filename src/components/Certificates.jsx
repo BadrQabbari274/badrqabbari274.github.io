@@ -3,6 +3,7 @@ import { Icon } from './Icons';
 import { useLanguage } from '../context/LanguageContext';
 import { DATA } from '../data/portfolioData';
 import './Certificates.css';
+import './Skills.css';
 
 export default function Certificates({ openGallery }) {
   const { t } = useLanguage();
