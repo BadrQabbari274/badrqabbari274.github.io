@@ -25,7 +25,7 @@ export default function Certificates({ openGallery }) {
         ))}
       </div>
       
-      <div className={`soft-skills-banner ${isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+      <div className={`soft-skills-banner`}>
         <h3 className="soft-skills-title">{t('skills.softSkills')}</h3>
         <div className="soft-skills-tags">
           {DATA.skills.soft.map((skill, i) => (
