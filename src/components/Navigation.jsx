@@ -28,7 +28,7 @@ export default function Navigation() {
 
       setScrolled(currentScrollY > 50);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'journey', 'certificates', 'art', 'contact'];
+      const sections = ['home', 'about', 'skills', 'projects', 'journey', 'certificates', 'contact'];
       for (const sec of sections) {
         const el = document.getElementById(sec);
         if (el && currentScrollY >= el.offsetTop - 100) {
@@ -48,7 +48,6 @@ export default function Navigation() {
     { to: '#projects', label: t('nav.projects') },
     { to: '#journey', label: t('nav.journey') },
     { to: '#certificates', label: t('nav.certificates') },
-    { to: '#art', label: t('nav.art') },
     { to: '#contact', label: t('nav.contact') }
   ];
 
