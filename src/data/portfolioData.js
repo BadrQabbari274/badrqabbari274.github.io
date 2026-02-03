@@ -102,7 +102,7 @@ export const DATA = {
       title: 'Full-Stack E-Commerce Platform',
       type: 'web',
       tech: ['Flutter', 'ASP.NET Web API', 'SQL Server', 'JWT Auth'],
-      duration: 'Present',
+      duration: 'Work in Progress',
       description: 'An advanced e-commerce ecosystem featuring a high-performance mobile application built with Flutter and a secure RESTful API back-end. The system handles complex operations including secure user authentication (JWT), dynamic product cataloging, shopping cart logic, and real-time order processing.',
       github: 'https://github.com/BadrQabbari274',
       image: []
@@ -111,7 +111,7 @@ export const DATA = {
       id: 'p4',
       title: "Green Pack",
       type: 'mobile',
-      duration: "2025 – Present",
+      duration: "Under Development",
       description: "Smart eco-reward mobile application built with Flutter and Firebase Realtime Database. The app is connected to a physical recycling box powered by Arduino and ESP modules. When a customer inserts recyclable items, points are automatically sent to their account in real time, encouraging sustainable behavior through a digital reward system.",
       tech: [
         "Flutter",
