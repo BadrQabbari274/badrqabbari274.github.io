@@ -2,7 +2,7 @@
   "name": "badr-portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://badrqabbari274.github.io/portfolio",
+  "homepage": "https://badrqabbari274.github.io",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@studio-freight/lenis": "^1.0.42",
