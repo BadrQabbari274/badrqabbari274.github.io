@@ -1,6 +1,6 @@
 export const DATA = {
   header: {
-    name: 'Badr Eldin',
+    name: 'Badreldin Qabbari',
     title: 'Software Engineer | Full-Stack Developer',
     subtitle: 'ASP.NET • Flutter • SQL Server',
     location: 'Alexandria, Egypt',
