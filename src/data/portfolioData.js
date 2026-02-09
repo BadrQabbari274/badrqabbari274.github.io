@@ -7,7 +7,7 @@ export const DATA = {
     email: 'badreldinahmedqabbari@gmail.com',
     phone: '+20 128 494 0906',
     whatsapp: 'https://wa.me/201284940906',
-    linkedin: 'https://www.linkedin.com/in/badr-eldin-qabbari-5b541b2b9',
+    linkedin: 'https://www.linkedin.com/in/badreldin-qabbari-5b541b2b9',
     github: 'https://github.com/BadrQabbari274',
     twitter: 'http://www.twitter.com/badrqabbari274',
     profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/profile_image_f7i4zl.jpg',

@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react'; // ضفنا useRef
-import emailjs from '@emailjs/browser'; // استيراد المكتبة
+import React, { useState, useRef } from 'react'; 
+import emailjs from '@emailjs/browser'; 
 import { Icon } from './Icons';
 import { useLanguage } from '../context/LanguageContext';
 import { DATA } from '../data/portfolioData';
@@ -9,7 +9,7 @@ import './Contact.css';
 export default function Contact() {
   const { t } = useLanguage();
   const [elementRef, isVisible] = useScrollAnimation();
-  const form = useRef(); // مرجع للفورم
+  const form = useRef(); 
 
   const [formData, setFormData] = useState({ 
     name: '', 
