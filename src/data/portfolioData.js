@@ -231,5 +231,5 @@ export const DATA = {
     { url: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto//v1766959563/WhatsApp_Image_2025-12-29_at_12.05.02_AM_fm6gud.jpg' }
   ],
 
-  cv: { pdfUrl: 'https://drive.google.com/file/d/1eUnU_vU0IvHTnaQc86SOlHkiwnHuAxHp/view?usp=sharing' }
+  cv: { pdfUrl: 'https://drive.google.com/file/d/1dyVk5Bko8WK3IGGT0UUIm78vYXIptxIJ/view?usp=sharing' }
 };

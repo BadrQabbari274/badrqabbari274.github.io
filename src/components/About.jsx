@@ -12,7 +12,7 @@ export default function About() {
     try {
       const link = document.createElement("a");
       link.href = DATA.cv?.pdfUrl || "";
-      link.download = "Badr_Eldin_CV.pdf";
+      link.download = "BadreldinQabbari_CV.pdf";
       link.target = "_blank";
       document.body.appendChild(link);
       link.click();
