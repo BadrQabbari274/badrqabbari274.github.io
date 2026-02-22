@@ -141,7 +141,7 @@
 }
 
 .action-button-call {
-  background: #121212; /* Dark background as shown in image */
+  background: #121212; 
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
