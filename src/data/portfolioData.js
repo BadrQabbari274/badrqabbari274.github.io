@@ -8,6 +8,8 @@ export const DATA = {
     phone: '+20 128 494 0906',
     whatsapp: 'https://wa.me/201284940906',
     linkedin: 'https://www.linkedin.com/in/badreldin-qabbari-5b541b2b9',
+    facebook: 'https://www.facebook.com/profile.php?id=100087166765870',
+    medium: 'https://eng-badrqabbari.medium.com/',
     github: 'https://github.com/BadrQabbari274',
     twitter: 'http://www.twitter.com/badrqabbari274',
     profileImage: 'https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870109/profile_image_f7i4zl.jpg',
@@ -25,6 +27,10 @@ export const DATA = {
     "Actively engaged in <strong>community workshops</strong> and cross-functional collaboration, with a continuous commitment to learning and <strong>shipping impactful software</strong> that addresses real user needs."
   ],
   
+  education: [  
+    "Senior CS Student @ Fathalla International Applied Technology School (FIATS) " ,
+    "Major: Computer Science | Duration: 2023 – 2026 (Expected)"
+  ],
 
   skills: {
     technical: [
@@ -142,7 +148,7 @@ export const DATA = {
       description: 'A high-performance desktop application for fitness centers, managing member subscriptions, trainer schedules, and financial reporting with a modern UI.',
       github: 'https://github.com/BadrQabbari274/Gym-Management-System',
       image: ['https://res.cloudinary.com/dmheu8ano/image/upload/v1768855612/962392ea-532a-43bc-aa68-bd4323afc1fa.png']
-    }
+    },
   ],
 
   journey: [
@@ -212,12 +218,14 @@ export const DATA = {
   ],
 
   certifications: [
-    { name: 'Applications of AI', org: 'Great Learning', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870112/Screenshot_2024-06-05_145406_pce0ym.png'] },
-    { name: 'Human Resources Training', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870110/HR_h0tk69.jpg'] },
-    { name: 'English International Certificate', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/a_-90/English_wckfmd.jpg'] },
-    { name: 'Effective Leadership', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870114/Screenshot_2024-03-09_102254_tuespo.png'] },
-    { name: 'Business Communications', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/v1766870114/Screenshot_2024-03-09_102349_f7wmft.png'] },
-    { name: 'Get Started with Figma', org: 'Coursera', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1766870113/Get_started_with_figma_w6wmxl.png'] }
+    { name: 'Applications of AI', org: 'Great Learning', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712210/BadreldinQabbari_ApplicationofAICertificate_bf7jie.png'] },
+    { name: 'International Test of Fundamental Academic Skills ', org: 'TOFAS', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712212/ilovepdf_merged_page-0001_vihub0.jpg'] },
+    { name: 'Get Started with Figma', org: 'Coursera', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712211/ilovepdf_merged_page-0004_ksmmj1.jpg'] },
+    { name: 'Human Resources Training', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712224/BadreldinQabbari_HRCertificate_page-0001_fykm5y.jpg'] },
+    { name: 'English Language Proficiency Certificate', org: 'Bright Bridge Center', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712226/BadreldinQabbari_EnglishCertificate_page-0001_irwqfy.jpg','https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712216/BadreldinQabbari_EnglishCertificate_page-0002_zku303.jpg'] },
+    { name: 'Leadership & Business Communication ', org: 'HP LIFE', images: ['https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712236/BadreldinQabbari_EffectivePresentationsCertificate_page-0001_m5negg.jpg','https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712217/ilovepdf_merged_page-0002_jcstyh.jpg','https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712206/BadreldinQabbari_HiringStaffCertificate_page-0001_rjiaeg.jpg','https://res.cloudinary.com/dmheu8ano/image/upload/f_auto,q_auto/v1771712204/BadreldinQabbari_EffectiveLeadershipCertificate_page-0001_bms5h0.jpg'] }
+    
+    
   ],
 
   competitions: [

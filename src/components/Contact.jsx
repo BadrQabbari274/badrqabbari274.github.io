@@ -32,7 +32,7 @@ export default function Contact() {
 
     try {
       const formDataObj = new FormData();
-      formDataObj.append("access_key", "b30f07ef-bd1c-4fa2-9b0a-9469c08630f5");
+      formDataObj.append("access_key", "b30f07ef-bd1c-4fa2-9b0a-9469c08630f5"); // شايفك باللي عنيك بتبرق => انا سايبه عادي
       formDataObj.append("name", formData.name);
       formDataObj.append("email", formData.email);
       formDataObj.append("project", formData.projectType);
@@ -121,7 +121,7 @@ export default function Contact() {
                     className="form-input form-select"
                   >
                     <option value="" disabled>Select Project Type</option>
-                    <option value="Connect">Connect</option>
+                    <option value="Contact Me">Contact Me</option>
                     <option value="Desktop Application">Desktop Application</option>
                     <option value="Web Application">Web Application</option>
                     <option value="Mobile Application">Mobile Application</option>
@@ -176,14 +176,32 @@ export default function Contact() {
                   { href: DATA.header.whatsapp, icon: <Icon.WhatsApp />, label: 'WhatsApp', color: '#25D366' },
                   { href: DATA.header.linkedin, icon: <Icon.Linkedin />, label: 'LinkedIn', color: '#0077b5' },
                   { href: DATA.header.github, icon: <Icon.Github />, label: 'GitHub', color: '#333' },
+                  { href: DATA.header.medium, icon: <Icon.Medium />, label: 'Medium', color: '#000000' },
                   { href: DATA.header.twitter, icon: <Icon.Twitter />, label: 'Twitter', color: '#1da1f2' },
+                  { href: DATA.header.facebook, icon: <Icon.Facebook />, label: 'Facebook', color: '#1877f2' },
+                  
+                  { 
+                    icon: <Icon.Mail />, 
+                    label: 'Or you can send me directly on Email', 
+                    color: '#444', 
+                    fullWidth: true,
+                    getHref: () => {
+                      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                      const email = "badreldinahmedqabbari@gmail.com";
+                     
+                      return isMobile 
+                        ? `mailto:${email}` 
+                        : `https://mail.google.com/mail/?view=cm&fs=1&to=${email}`;
+                    }
+                  },
                 ].map((social, index) => (
                   <a 
                     key={index}
-                    href={social.href} 
+
+                    href={social.getHref ? social.getHref() : social.href} 
                     target="_blank" 
                     rel="noreferrer" 
-                    className="social-card"
+                    className={`social-card ${social.fullWidth ? 'full-row' : ''}`}
                     style={{ '--hover-color': social.color }}
                   >
                     <div className="social-icon">{social.icon}</div>

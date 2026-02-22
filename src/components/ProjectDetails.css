@@ -75,6 +75,7 @@
 }
 
 .details-icon {
+  padding-left: 10%;
   font-size: 4rem;
   margin-bottom: 1rem;
   animation: bounce 2s ease-in-out infinite;

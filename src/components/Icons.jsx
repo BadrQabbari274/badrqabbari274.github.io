@@ -6,9 +6,9 @@ export const Icon = {
       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
     </svg>
   ),
-
+  
   Mail: () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
       <polyline points="22,6 12,13 2,6" />
     </svg>
@@ -18,6 +18,22 @@ export const Icon = {
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21.41 2.59a11.86 11.86 0 0 0-16.77 0 11.86 11.86 0 0 0 0 16.77L2 22l3.64-2.6a11.86 11.86 0 0 0 16.77-16.77z" />
       <path d="M16.07 11.21c-.25-.13-1.48-.73-1.71-.81-.23-.08-.4-.13-.57.13s-.65.81-.8.97c-.15.16-.31.18-.57.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.23-1.48-1.38-1.73-.15-.25-.02-.39.11-.52.12-.12.25-.31.38-.47.13-.16.17-.27.25-.45.08-.18.04-.33-.02-.46-.07-.13-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43-.15-.01-.33-.01-.51-.01s-.46.07-.7.33c-.24.25-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.84 2.82 4.47 3.95.63.27 1.12.43 1.5.55.63.19 1.21.16 1.66.1.51-.07 1.48-.6 1.69-1.18.21-.57.21-1.06.15-1.17-.06-.12-.23-.18-.48-.31z" />
+    </svg>
+  ),
+
+  Phone: () => (
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="20" 
+      height="20" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   ),
 
@@ -96,7 +112,11 @@ export const Icon = {
       <line x1="3" y1="18" x2="21" y2="18" />
     </svg>
   ),
-
+  Medium: () => (
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.41-3.38 6.41s-3.38-2.87-3.38-6.41 1.51-6.41 3.38-6.41 3.38 2.87 3.38 6.41zM24 12c0 3.17-.53 5.75-1.19 5.75s-1.19-2.58-1.19-5.75.53-5.75 1.19-5.75S24 8.83 24 12z" />
+    </svg>
+  ),
   Close: () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <line x1="18" y1="6" x2="6" y2="18" />

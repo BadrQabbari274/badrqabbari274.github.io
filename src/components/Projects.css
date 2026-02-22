@@ -1,8 +1,154 @@
 .projects-section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 50px;
    margin-top: 4rem;
+   margin-left: 1rem;
+   margin-right: 1rem;
+}
+/* =========================================
+   Carousel & Arrows Styles
+========================================= */
+.projects-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 0 2rem 0;
+  scroll-behavior: smooth;
+  width: 100%;
+  scrollbar-width: none; /* لإخفاء الشريط في فيرفوكس */
+  scroll-snap-type: x mandatory; /* ده اللي بيخليه يمشي سيكوانس */
 }
 
+.projects-carousel::-webkit-scrollbar {
+  display: none; /* لإخفاء الشريط في كروم وسفاري */
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: start; /* يخلي الكارد "يلزق" في البداية */
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 320px; /* حجم الكارد في الكمبيوتر */
+  }
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.projects-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 1rem 0 2rem 0;
+  scroll-behavior: smooth;
+  width: 100%;
+  
+  /* الحاجات دي بتخفي شكل السكرول بار من تحت بس بتسيبه شغال */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  
+  /* أهم سطر عشان يخليه يمشي سيكوانس منتظم وميوقفش في نص المشروع */
+  scroll-snap-type: x mandatory;
+}
+
+.projects-carousel::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: flex;
+  
+  /* بيجبر المتصفح يوقف بالظبط عند بداية كل مشروع */
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .carousel-item {
+    flex: 0 0 320px; /* حجم المشروع في الكمبيوتر */
+  }
+}
+
+/* =========================================
+   Navigation Arrows Styles
+========================================= */
+
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--bg-secondary, rgba(31, 41, 55, 0.8));
+  color: var(--accent-blue, #3b82f6);
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-arrow:hover {
+  background-color: var(--accent-blue, #3b82f6);
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+}
+
+.left-arrow {
+  left: -20px;
+}
+
+.right-arrow {
+  right: -20px;
+}
+
+@media (max-width: 768px) {
+  .left-arrow {
+    left: 0px;
+  }
+  .right-arrow {
+    right: 0px;
+  }
+}
+
+/* =========================================
+   Toggle Button Styles
+========================================= */
+
+.toggle-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.toggle-all-btn {
+  padding: 0.6rem 2.5rem;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--text-primary, #fff);
+  border: 1px solid var(--accent-blue, #3b82f6);
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.toggle-all-btn:hover {
+  background-color: var(--accent-blue, #3b82f6);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+}
 .project-filters {
   display: flex;
   flex-wrap: wrap;

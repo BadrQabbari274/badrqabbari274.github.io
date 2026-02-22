@@ -7,7 +7,6 @@ import "./About.css";
 export default function About() {
   const { t } = useLanguage();
 
-  // Function to download CV as file
   const handleDownloadCV = async () => {
     try {
       const link = document.createElement("a");
@@ -27,7 +26,7 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="about-container animate-fade-in-up">
         <div className="about-grid">
-          {/* Profile Image with Available Badge */}
+          {/* Profile Image */}
           <div className="about-image-wrapper">
             <div className="about-image-container">
               <img
@@ -45,7 +44,7 @@ export default function About() {
           {/* Content */}
           <div className="about-text">
             <h2 className="section-title">{t("about.title")}</h2>
-
+            
             <div className="about-content">
               {DATA.summary.map((para, i) => (
                 <p
@@ -55,27 +54,33 @@ export default function About() {
                 />
               ))}
             </div>
+
+            {/* Education Info - مكانها الجديد تحت الوصف مباشرة لترتيب الـ CV */}
+            <div className="education-section">
+              {DATA.education.map((info, i) => (
+                <div key={i} className="education-item">
+                  <span className="edu-dot">•</span>
+                  <p className="edu-text" dangerouslySetInnerHTML={{ __html: info }} />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Action Buttons */}
         <div className="about-actions">
-          <button
-            onClick={handleDownloadCV}
-            className="action-button action-button-primary"
-          >
-            <Icon.Download />
+          <button onClick={handleDownloadCV} className="action-button action-button-primary">
+            {Icon.Download ? <Icon.Download /> : "💾"} 
             <span>{t("hero.downloadCV")}</span>
           </button>
 
           <a
-            href={DATA.header.whatsapp}
-            target="_blank"
-            rel="noreferrer"
-            className="action-button action-button-whatsapp"
+            href={`tel:${DATA.header.phone}`}
+            className="action-button action-button-call"
           >
-            <span>💬</span>
-            <span>WhatsApp</span>
+            {Icon.Phone ? <Icon.Phone /> : "📞"}
+            {/* عرض رقم التليفون الفعلي كما في الصورة */}
+            <span>{DATA.header.phone}</span>
           </a>
         </div>
       </div>

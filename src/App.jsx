@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+// تم حذف Lenis من هنا
 
 import Navigation from "./components/Navigation";
 import Hero from "./components/Hero";
@@ -24,25 +24,7 @@ export default function App() {
   const [gallery, setGallery] = useState({ open: false, images: [] });
   const [isLoading, setIsLoading] = useState(true);
 
-  /* ================= SMOOTH SCROLL (LENIS) ================= */
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      smooth: true,
-      smoothTouch: false,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
-  }, []);
-  /* ========================================================= */
+  /* ================================================= */
 
   /* ================= LOADING SCREEN ================= */
   useEffect(() => {
@@ -77,7 +59,7 @@ export default function App() {
           <Navigation />
 
           <main>
-              <Hero />
+            <Hero />
             <div className="page-wrapper">
               <About />
               <Skills />
