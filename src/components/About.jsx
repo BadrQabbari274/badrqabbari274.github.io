@@ -55,7 +55,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* Education Info - مكانها الجديد تحت الوصف مباشرة لترتيب الـ CV */}
             <div className="education-section">
               {DATA.education.map((info, i) => (
                 <div key={i} className="education-item">
